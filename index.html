@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Rental System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <button onclick="showSection('available-cars')" class="nav-btn active">Available Cars</button>
+        <button onclick="showSection('rent-car')" class="nav-btn">Rent a Car</button>
+        <button onclick="showSection('return-car')" class="nav-btn">Return Car</button>
+    </nav>
+
+    <main>
+        <section id="available-cars" class="section active">
+            <h2>Available Cars</h2>
+            <div id="car-list" class="car-grid"></div>
+        </section>
+
+        <section id="rent-car" class="section">
+            <h2>Rent a Car</h2>
+            <form id="rent-form" onsubmit="handleRentCar(event)">
+                <div class="form-group">
+                    <label for="customerName">Your Name:</label>
+                    <input type="text" id="customerName" required>
+                </div>
+                <div class="form-group">
+                    <label for="carSelect">Select Car:</label>
+                    <select id="carSelect" required></select>
+                </div>
+                <div class="form-group">
+                    <label for="days">Number of Days:</label>
+                    <input type="number" id="days" min="1" value="1" required>
+                </div>
+                <button type="submit" class="btn">Rent Car</button>
+            </form>
+        </section>
+
+        <section id="return-car" class="section">
+            <h2>Return Car</h2>
+            <div id="rented-cars" class="car-grid"></div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
